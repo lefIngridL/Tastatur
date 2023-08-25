@@ -2,18 +2,36 @@ body {
     background-color: rgb(128, 240, 165);
 }
 .tastatur {
-    height: 150px;
+    height: 200px;
     width: 500px;
     border: 10px;
     border-style: outset;
     border-color: rgba(14, 13, 13, 0.952);
+    
+    padding-left:0.5%;
+    padding-right: 0.5%;
+    padding-bottom: 1%;
+
+}
+.bokstaver {
+    padding-top: 2%;
+    height: 150px;
+    width: 500px;
+    
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
     padding-left:0.5%;
     padding-right: 0.5%;
 
 }
-
+.spesialtegn {
+    padding-left:0.5%;
+    padding-right: 0.5%;
+    display: grid;
+    grid-template-rows: 40px 40px;
+    grid-template-columns: 45px 45px 45px 165px 45px 45px 45px;
+    
+}
 .tekstfelt {
     height: 200px;
     width: 500px;
@@ -36,10 +54,47 @@ body {
     color: antiquewhite;
     background-color: rgba(0, 0, 0, 0.747);
 }
+.spacebar {
+    height: 40px;
+    width: 160px;
+    border: 2px;
+    border-style: outset;
+    border-color: black;
+    color: antiquewhite;
+    background-color: rgba(0, 0, 0, 0.747);
+}
+.spaceInn {
+    height: 40px;
+    width: 160px;
+    border: 2px;
+    border-style: inset;
+    border-color: black;
+    color: antiquewhite;
+    background-color: rgba(0, 0, 0, 0.747);
+    
+}
+.cleartast {
+    height: 40px;
+    width: 60px;
+    border: 2px;
+    border-style: outset;
+    border-color: black;
+    color: antiquewhite;
+    background-color: rgba(0, 0, 0, 0.747);
+}
+.cleartastInn {
+    height: 40px;
+    width: 60px;
+    border: 2px;
+    border-style: inset;
+    border-color: black;
+    color: antiquewhite;
+    background-color: rgba(0, 0, 0, 0.747);
+}
 .tastInn {
     height: 40px;
     width: 40px;
-    border: 1px;
+    border: 2px;
     border-style: inset;
     border-color: black;
     color: antiquewhite;

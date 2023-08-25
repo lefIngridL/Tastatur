@@ -11,7 +11,10 @@
     <div id="app"></div>
     <div id="tekstfelt" class="tekstfelt"></div>
     <br>
+    
     <div id="tastatur" class="tastatur">
+        
+        <div class="bokstaver">
         <div id="Q" class="tast" onclick="trykk(this); writer(this)">Q</div>
         <div id="W" class="tast" onclick="trykk(this); writer(this)">W</div>
         <div id="E" class="tast" onclick="trykk(this); writer(this)">E</div>
@@ -41,10 +44,26 @@
         <div id="B" class="tast" onclick="trykk(this); writer(this)">B</div>
         <div id="N" class="tast" onclick="trykk(this); writer(this)">N</div>
         <div id="M" class="tast" onclick="trykk(this); writer(this)">M</div>
-        <div id=" " class="tast" onclick="trykk(this); writer(this)">  </div>
+         <div id="," class="tast" onclick="trykk(this); writer(this)">,</div>
         <div id="." class="tast" onclick="trykk(this); writer(this)">.</div>
+        <div id="-" class="tast" onclick="trykk(this); writer(this)">-</div>
+       
+    </div>
+    
+    <div class="spesialtegn">
+       
+       
+        <div id="ctrl" class="tast" onclick="trykk(this); writer(this)">Ctrl</div>
+        <div id="Fn" class="tast" onclick="trykk(this); writer(this)">Fn</div>
+        <div id="Alt" class="tast" onclick="trykk(this); writer(this)">Alt</div>
+         <div id=" " class="spacebar" onclick="trykk(this); writer(this)">  </div>
+        <div id="Alt Gr" class="tast" onclick="trykk(this); writer(this)">Alt Gr</div>
         <div id="!" class="tast" onclick="trykk(this); writer(this)">!</div>
+        <div id="clear" class="cleartast" onclick="window.location.reload(); trykk(this)">Clear display</div>
+    </div>
+       
         
+       
     </div>
     
     
@@ -52,9 +71,23 @@
         function trykk(trykTegn) {
             let tast =  trykTegn.innerhtml;
             let tastID = trykTegn.id;
-            document.getElementById(tastID).classList.toggle('tast');
-            document.getElementById(tastID).classList.toggle('tastInn');
-            const timer = setTimeout(reset, 200, tastID);
+            if (trykTegn.class != "spacebar" && trykTegn.class !="cleartast") {
+            document.getElementById(tastID).classList.remove('tast');
+            document.getElementById(tastID).classList.add('tastInn');
+            const timer = setTimeout(reset, 200, tastID);}
+            else if (trykTegn.class=="spacebar") {
+            document.getElementById(tastID).classList.remove('spacebar');
+            document.getElementById(tastID).classList.add('spaceInn');
+            const timer = setTimeout(resetspace, 200, tastID);
+
+            }
+            else {
+            document.getElementById(tastID).classList.remove('cleartast');
+            document.getElementById(tastID).classList.add('cleartastInn');
+            const timer = setTimeout(resetclear, 200, tastID);
+
+            }
+            
 
         }
         var text;
@@ -69,9 +102,19 @@
 
         }
         function reset(tastID) {
-            document.getElementById(tastID).classList.toggle('tast');
-            document.getElementById(tastID).classList.toggle('tastInn');
+            document.getElementById(tastID).classList.add('tast');
+            document.getElementById(tastID).classList.remove('tastInn');
         }
+        function resetspace(tastID) {
+            document.getElementById(tastID).classList.add('spacebar');
+            document.getElementById(tastID).classList.remove('spaceInn');
+        }
+        function resetclear(tastID) {
+            document.getElementById(tastID).classList.add('cleartast');
+            document.getElementById(tastID).classList.remove('cleartastInn');
+        }
+
+        
 
     </script>
 </body>
