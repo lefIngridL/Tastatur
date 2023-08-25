@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+<body>
+    <div id="app"></div>
+    <div id="tekstfelt" class="tekstfelt"></div>
+    <br>
+    <div id="tastatur" class="tastatur">
+        <div id="Q" class="tast" onclick="trykk(this); writer(this)">Q</div>
+        <div id="W" class="tast" onclick="trykk(this); writer(this)">W</div>
+        <div id="E" class="tast" onclick="trykk(this); writer(this)">E</div>
+        <div id="R" class="tast" onclick="trykk(this); writer(this)">R</div>
+        <div id="T" class="tast" onclick="trykk(this); writer(this)">T</div>
+        <div id="Y" class="tast" onclick="trykk(this); writer(this)">Y</div>
+        <div id="U" class="tast" onclick="trykk(this); writer(this)">U</div>
+        <div id="I" class="tast" onclick="trykk(this); writer(this)">I</div>
+        <div id="O" class="tast" onclick="trykk(this); writer(this)">O</div>
+        <div id="P" class="tast" onclick="trykk(this); writer(this)">P</div>
+        <div id="Å" class="tast" onclick="trykk(this); writer(this)">Å</div>
+        <div id="A" class="tast" onclick="trykk(this); writer(this)">A</div>
+        <div id="S" class="tast" onclick="trykk(this); writer(this)">S</div>
+        <div id="D" class="tast" onclick="trykk(this); writer(this)">D</div>
+        <div id="F" class="tast" onclick="trykk(this); writer(this)">F</div>
+        <div id="G" class="tast" onclick="trykk(this); writer(this)">G</div>
+        <div id="H" class="tast" onclick="trykk(this); writer(this)">H</div>
+        <div id="J" class="tast" onclick="trykk(this); writer(this)">J</div>
+        <div id="K" class="tast" onclick="trykk(this); writer(this)">K</div>
+        <div id="L" class="tast" onclick="trykk(this); writer(this)">L</div>
+        <div id="Ø" class="tast" onclick="trykk(this); writer(this)">Ø</div>
+        <div id="Æ" class="tast" onclick="trykk(this); writer(this)">Æ</div>
+        <div id="Z" class="tast" onclick="trykk(this); writer(this)">Z</div>
+        <div id="X" class="tast" onclick="trykk(this); writer(this)">X</div>
+        <div id="C" class="tast" onclick="trykk(this); writer(this)">C</div>
+        <div id="V" class="tast" onclick="trykk(this); writer(this)">V</div>
+        <div id="B" class="tast" onclick="trykk(this); writer(this)">B</div>
+        <div id="N" class="tast" onclick="trykk(this); writer(this)">N</div>
+        <div id="M" class="tast" onclick="trykk(this); writer(this)">M</div>
+        <div id=" " class="tast" onclick="trykk(this); writer(this)">  </div>
+        <div id="." class="tast" onclick="trykk(this); writer(this)">.</div>
+        <div id="!" class="tast" onclick="trykk(this); writer(this)">!</div>
+        
+    </div>
+    
+    
+    <script >
+        function trykk(trykTegn) {
+            let tast =  trykTegn.innerhtml;
+            let tastID = trykTegn.id;
+            document.getElementById(tastID).classList.toggle('tast');
+            document.getElementById(tastID).classList.toggle('tastInn');
+            const timer = setTimeout(reset, 200, tastID);
+
+        }
+        var text;
+        const screenContent=[];
+        function writer(letter) {
+             text = letter.innerHTML;
+             screenContent.push(text);
+             content = screenContent.join("");
+             document.getElementById('tekstfelt').innerHTML = content;
+             console.log(content, screenContent);
+
+
+        }
+        function reset(tastID) {
+            document.getElementById(tastID).classList.toggle('tast');
+            document.getElementById(tastID).classList.toggle('tastInn');
+        }
+
+    </script>
+</body>
+</html>
+<!--Oppgave: 
+
+Lag et tekstfelt og et "tastatur" av forskjellige 
+knapper du kan trykke på. Oppdater tekstfeltet til 
+å vise frem hvilke knapper du har trykt på ved å 
+bruke variabler, this og funksjon med parameter-->
